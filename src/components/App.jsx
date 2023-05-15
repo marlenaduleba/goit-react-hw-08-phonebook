@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import Container from './Layout/Layout';
+import { Container } from '@mui/system';
 import { Phonebook } from './Phonebook/Phonebook';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
+import AppBar from './AppBar/AppBar.jsx';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,8 @@ export const App = () => {
 
   return (
     <Container>
+      <AppBar/>
       <Phonebook />
-    </Container>
+    </ Container>
   );
 };
