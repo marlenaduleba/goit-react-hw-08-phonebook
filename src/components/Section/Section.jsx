@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import { Typography } from '@mui/material';
+import { Typography, Stack } from '@mui/material';
 
 import css from './Section.module.css';
 
 export const Section = ({ title, children }) => {
   return (
-    <section className={css.section} >
-      <Typography variant="h4" component="h2">
+    <Stack component="section"  sx={{paddingLeft: 5, paddingRight: 5, marginBottom: 5}} >
+      <Typography variant="h4" component="h2" align='center' >
   {title}
 </Typography>
       {children}
-    </section>
+    </Stack>
   );
 };
 

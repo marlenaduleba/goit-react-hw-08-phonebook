@@ -5,20 +5,17 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { useSelector } from 'react-redux';
 import { selectContacts, selectIsLoading } from 'redux/selectors';
 import Loader from 'components/Loader/Loader';
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
-import css from './Phonebook.module.css';
-import Form from 'components/Form/Form.jsx';
 
 export const Phonebook = () => {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
 
   return (
-    <Container maxWidth='sm' >
+    <Container maxWidth='sm' sx={{paddingBottom: 10}}  >
      
         <Section title="Phonebook">
-          <Form/>
           <ContactForm />
            {isLoading && <Loader  />}
         </Section>
@@ -27,10 +24,10 @@ export const Phonebook = () => {
           {contacts.length > 0 ? (
             <Filter />
           ) : (
-            <p className={css.message}>
+            <Typography align='center'>
               Looks like you don`t have any contacts yet or just clear them all.
               Please add new contact.
-            </p>
+            </Typography>
           )}
           <ContactList />
       

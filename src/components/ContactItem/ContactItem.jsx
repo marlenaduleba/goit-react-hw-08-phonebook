@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import PropTypes from 'prop-types';
+import { ListItem, Button, ListItemButton, ListItemText } from '@mui/material';
 
 import css from './ContactItem.module.css';
 import { Notify } from 'notiflix';
@@ -12,8 +13,7 @@ export const ContactItem = ({ contact }) => {
 
   const handleDelete = () => {
     dispatch(deleteContact(contact.id));
-    Notify.info(`${contact.name} removed from your contacts.`)
-  
+    Notify.info(`${contact.name} removed from your contacts.`);
   };
 
   if (error) {
@@ -25,21 +25,31 @@ export const ContactItem = ({ contact }) => {
     );
   }
 
-
   return (
-    <li className={css.item}>
-      <span className={css.name}>{contact.name}</span>:{' '}
-      <span>{contact.phone}</span>
-      <button className={css.btn} onClick={handleDelete} type="button">
-        Delete
-      </button>
-    </li>
+    <ListItem
+      secondaryAction={
+        <Button
+          edge="end"
+          aria-label="delete contact"
+          onClick={handleDelete}
+          type="button"
+        >
+          Delete
+        </Button>
+      }
+      disablePadding
+    >
+      <ListItemButton role="undefined" dense>
+        <ListItemText  primary={contact.name}  sx={{flexBasis: '20%'}} />
+        <ListItemText secondary={contact.phone} sx={{flexBasis: '50%'}} />
+      </ListItemButton>
+    </ListItem>
   );
 };
 
 ContactItem.propTypes = {
   contact: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired
-  }).isRequired
+    phone: PropTypes.string.isRequired,
+  }).isRequired,
 };

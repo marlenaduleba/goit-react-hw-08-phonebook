@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { ContactItem } from 'components/ContactItem/ContactItem';
 import { selectError, selectFilteredContacts } from 'redux/selectors';
+import { List } from '@mui/material';
 
 import css from './ContactList.module.css';
 import { Notify } from 'notiflix';
@@ -24,11 +25,11 @@ export const ContactList = () => {
 
   return (
     <div>
-      <ul className={css.list}>
+      <List   sx={{ width: '100%', marginTop: 2}}>
         {filteredContacts.map(contact => (
           <ContactItem key={contact.id} contact={contact} />
         ))}
-      </ul>
+      </List>
     </div>
   );
 };
