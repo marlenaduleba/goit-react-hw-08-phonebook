@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { Typography, Stack } from '@mui/material';
 
-import css from './Section.module.css';
 
 export const Section = ({ title, children }) => {
   return (
@@ -14,10 +13,10 @@ export const Section = ({ title, children }) => {
   );
 };
 
-Section.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-};
+// Section.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   children: PropTypes.oneOfType([
+//     PropTypes.arrayOf(PropTypes.node),
+//     PropTypes.node,
+//   ]).isRequired,
+// };

@@ -1,11 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/operations';
-import PropTypes from 'prop-types';
+import { deleteContact } from 'redux/contacts/operations.js';
+//import PropTypes from 'prop-types';
 import { ListItem, Button, ListItemButton, ListItemText } from '@mui/material';
 
-import css from './ContactItem.module.css';
 import { Notify } from 'notiflix';
-import { selectError } from 'redux/selectors';
+import { selectError } from 'redux/contacts/selectors.js';
 
 export const ContactItem = ({ contact }) => {
   const dispatch = useDispatch();
@@ -47,9 +46,9 @@ export const ContactItem = ({ contact }) => {
   );
 };
 
-ContactItem.propTypes = {
-  contact: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
-  }).isRequired,
-};
+// ContactItem.propTypes = {
+//   contact: PropTypes.shape({
+//     name: PropTypes.string.isRequired,
+//     phone: PropTypes.string.isRequired,
+//   }).isRequired,
+// };

@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { ContactItem } from 'components/ContactItem/ContactItem';
-import { selectError, selectFilteredContacts } from 'redux/selectors';
+import { selectFilteredContacts } from 'redux/selectors';
+import { selectError } from 'redux/contacts/selectors.js';
 import { List } from '@mui/material';
 
-import css from './ContactList.module.css';
 import { Notify } from 'notiflix';
 
 export const ContactList = () => {

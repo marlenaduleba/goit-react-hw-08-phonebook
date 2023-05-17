@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
-import { selectContacts, selectError } from 'redux/selectors';
+import { selectError } from 'redux/contacts/selectors.js';
+import { selectAllContacts } from 'redux/contacts/selectors.js';
 import { useReducer } from 'react';
 import { Notify } from 'notiflix';
-import { TextField, Stack } from '@mui/material';
-import { Button } from '@mui/material';
+import { TextField, Stack, Button } from '@mui/material';
+
 
 const initialValues = {
   name: '',
@@ -26,7 +27,7 @@ const reducer = (state, action) => {
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
+  const contacts = useSelector(selectAllContacts);
   const error = useSelector(selectError);
 
   const [{ name, phone }, dispatchReducer] = useReducer(reducer, initialValues);
