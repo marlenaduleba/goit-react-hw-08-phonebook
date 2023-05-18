@@ -15,10 +15,7 @@ export default function ButtonAppBar() {
         <Toolbar>
         <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
-          {/* <Button color='inherit' sx={{ marginRight: 'auto', textTransform: 'none'}}  >Home</Button>
-
-          <Button color="inherit" sx={{ textTransform: 'none'}} >Sign In</Button>
-          <Button color="inherit" sx={{ textTransform: 'none'}} >Sign Up</Button> */}
+        
         </Toolbar>
       </AppBar>
     </Box>

@@ -9,7 +9,7 @@ const {isLoggedIn} = useAuth();
       <NavLink  className={css.link} to="/" >Home</NavLink>
       {isLoggedIn && ( 
 
-      <NavLink className={css.link} to="/tasks" >Tasks</NavLink>
+      <NavLink className={css.link} to="/contacts" >Contacts</NavLink>
       )} 
     </nav>
   };

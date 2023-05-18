@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { ContactItem } from 'components/ContactItem/ContactItem';
-import { selectFilteredContacts } from 'redux/selectors';
+import { selectFilteredContacts } from 'redux/contacts/selectors.js';
 import { selectError } from 'redux/contacts/selectors.js';
 import { List } from '@mui/material';
 

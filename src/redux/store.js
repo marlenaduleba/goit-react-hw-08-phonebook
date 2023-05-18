@@ -30,7 +30,7 @@ const customizedMiddleware = getDefaultMiddleware => {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    tasks: contactsReducer,
+    contacts: contactsReducer,
   },
   middleware: customizedMiddleware,
   devTools: process.env.NODE_ENV === 'development',
