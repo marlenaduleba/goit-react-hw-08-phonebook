@@ -9,7 +9,7 @@ import { TextField, Stack, Button } from '@mui/material';
 
 const initialValues = {
   name: '',
-  phone: '',
+  number: '',
 };
 
 const reducer = (state, action) => {
@@ -17,7 +17,7 @@ const reducer = (state, action) => {
     case 'name':
       return { ...state, name: action.payload };
     case 'number':
-      return { ...state, phone: action.payload };
+      return { ...state, number: action.payload };
     case 'reset':
       return { ...action.payload };
     default:
@@ -30,13 +30,13 @@ export const ContactForm = () => {
   const contacts = useSelector(selectAllContacts);
   const error = useSelector(selectError);
 
-  const [{ name, phone }, dispatchReducer] = useReducer(reducer, initialValues);
+  const [{ name, number }, dispatchReducer] = useReducer(reducer, initialValues);
 
   const handleFormSubmit = e => {
     e.preventDefault();
 
     if (nameUnique(name)) {
-      dispatch(addContact({ name, phone }));
+      dispatch(addContact({ name, number }));
       Notify.success(`${name} added to your contacts.`);
     }
 
@@ -54,7 +54,7 @@ export const ContactForm = () => {
   };
 
   const handleInputChange = e => {
-    const { name, value } = e.currentTarget;
+    const { name, value } = e.target;
     dispatchReducer({ type: name, payload: value });
   };
 
@@ -93,7 +93,7 @@ export const ContactForm = () => {
               '\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}',
           }}
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          value={phone}
+          value={number}
           onChange={handleInputChange}
           required
   

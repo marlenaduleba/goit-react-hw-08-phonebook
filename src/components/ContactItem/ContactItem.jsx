@@ -40,7 +40,7 @@ export const ContactItem = ({ contact }) => {
     >
       <ListItemButton role="undefined" dense>
         <ListItemText  primary={contact.name}  sx={{flexBasis: '20%'}} />
-        <ListItemText secondary={contact.phone} sx={{flexBasis: '50%'}} />
+        <ListItemText secondary={contact.number} sx={{flexBasis: '50%'}} />
       </ListItemButton>
     </ListItem>
   );
