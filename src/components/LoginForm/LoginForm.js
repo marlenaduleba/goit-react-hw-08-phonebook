@@ -2,6 +2,10 @@ import { logIn } from 'redux/auth/operations.js';
 import css from './LoginForm.module.css';
 import { useDispatch } from 'react-redux';
 import { useReducer } from 'react';
+import {StyledButton } from 'styles/styles.js';
+
+
+
 
 const initialValues = {
   email: '',
@@ -43,17 +47,18 @@ export const LoginForm = () => {
   }
 
   return (
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
-        Email
-        <input type="email" name="email" value={email} onChange={handleInputChange} />
-      </label>
 
-      <label className={css.label}>
-        Password
-        <input type="password" name="password" value={password} onChange={handleInputChange} />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+      <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
+        <label className={css.label}>
+          Email
+          <input type="email" name="email" value={email} onChange={handleInputChange} />
+        </label>
+        <label className={css.label}>
+          Password
+          <input type="password" name="password" value={password} onChange={handleInputChange} />
+        </label>
+        <StyledButton type="submit">Log In</StyledButton>
+      </form>
+  
   );
 };

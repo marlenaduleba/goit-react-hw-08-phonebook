@@ -2,6 +2,8 @@ import { useDispatch } from 'react-redux';
 import css from './RegisterForm.module.css';
 import { register } from 'redux/auth/operations.js';
 import { useReducer } from 'react';
+import { StyledButton } from 'styles/styles.js';
+
 
 const initialValues = {
   name: '',
@@ -59,7 +61,7 @@ export const RegisterForm = () => {
         Password
         <input type="password" name="password"  value={password} onChange={handleInputChange} />
       </label>
-      <button type="submit">Register</button>
+      <StyledButton type="submit">Register</StyledButton>
     </form>
   );
 };
