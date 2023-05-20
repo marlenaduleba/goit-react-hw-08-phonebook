@@ -1,5 +1,6 @@
 import { LoginForm } from 'components/LoginForm/LoginForm.js';
 import { Helmet } from 'react-helmet';
+import { Container } from '@mui/system';
 
 export default function Login() {
   return (
@@ -7,7 +8,9 @@ export default function Login() {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <LoginForm />
+      <Container maxWidth='sm' sx={{paddingBottom: 10}} >
+        <LoginForm />
+      </Container>
     </div>
   );
 }

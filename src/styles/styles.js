@@ -1,4 +1,4 @@
-import { Button, AppBar, List } from '@mui/material';
+import { Button, AppBar, List, Typography, TextField } from '@mui/material';
 import { styled, createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
@@ -38,6 +38,7 @@ export const NavButton = styled(Button)(({ theme }) => ({
 }));
 
 export const StyledButton = styled(Button)(({ theme }) => ({
+  marginTop: '24px',
   width: '50%',
   transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
   background:
@@ -73,4 +74,13 @@ export const DeleteButton = styled(Button)(() => ({
   '&:hover': {
     transform: 'scale(1.1)',
   },
+}));
+
+export const StyledTypography = styled(Typography)(() => ({
+  marginBottom: '8px',
+  textAlign: 'center',
+}));
+
+export const StyledTextField = styled(TextField)(() => ({
+  margin: '16px 0 8px',
 }));
