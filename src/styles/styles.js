@@ -1,4 +1,4 @@
-import { Button, AppBar, List, Typography, TextField } from '@mui/material';
+import { Button, AppBar, List, Typography, FormControl } from '@mui/material';
 import { styled, createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
@@ -81,6 +81,6 @@ export const StyledTypography = styled(Typography)(() => ({
   textAlign: 'center',
 }));
 
-export const StyledTextField = styled(TextField)(() => ({
+export const StyledFormControl = styled(FormControl)(() => ({
   margin: '16px 0 8px',
 }));
