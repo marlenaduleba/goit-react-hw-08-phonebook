@@ -1,4 +1,4 @@
-import { LoginForm } from 'components/LoginForm/LoginForm.js';
+import LoginForm  from 'components/LoginForm/LoginForm.js';
 import { Helmet } from 'react-helmet';
 import { Container } from '@mui/system';
 
