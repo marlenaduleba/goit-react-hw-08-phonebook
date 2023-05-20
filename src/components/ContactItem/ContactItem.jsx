@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations.js';
 //import PropTypes from 'prop-types';
 import { ListItem, Button, ListItemButton, ListItemText } from '@mui/material';
+import { DeleteButton } from 'styles/styles.js';
 
 import { Notify } from 'notiflix';
 import { selectError } from 'redux/contacts/selectors.js';
@@ -27,14 +28,15 @@ export const ContactItem = ({ contact }) => {
   return (
     <ListItem
       secondaryAction={
-        <Button
+        <DeleteButton
           edge="end"
           aria-label="delete contact"
           onClick={handleDelete}
           type="button"
+         
         >
           Delete
-        </Button>
+        </DeleteButton>
       }
       disablePadding
     >

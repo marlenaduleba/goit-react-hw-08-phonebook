@@ -1,23 +1,20 @@
-import { AppBar, Box, Toolbar} from '@mui/material';
+import { Box, Toolbar } from '@mui/material';
 import { useAuth } from 'hooks/useAuth.js';
 import { Navigation } from 'components/Navigation/Navigation.js';
 import { UserMenu } from 'components/UserMenu/UserMenu.js';
-import  {AuthNav}  from 'components/AuthNav/AuthNav.js';
+import { AuthNav } from 'components/AuthNav/AuthNav.js';
+import { StyledAppBar } from 'styles/styles.js';
 
-
-
-export default function CustomAppBar() {
-
+export const AppBar = () => {
   const { isLoggedIn } = useAuth();
   return (
     <Box sx={{ flexGrow: 1, marginBottom: '20px' }}>
-      <AppBar position="static" >
+      <StyledAppBar position="static">
         <Toolbar>
-        <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
-        
+          <Navigation />
+          {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Toolbar>
-      </AppBar>
+      </StyledAppBar>
     </Box>
   );
-}
+};

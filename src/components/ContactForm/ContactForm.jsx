@@ -5,6 +5,7 @@ import { selectAllContacts } from 'redux/contacts/selectors.js';
 import { useReducer } from 'react';
 import { Notify } from 'notiflix';
 import { TextField, Stack, Button } from '@mui/material';
+import { StyledButton } from 'styles/styles.js';
 
 
 const initialValues = {
@@ -65,7 +66,7 @@ export const ContactForm = () => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <Stack spacing={4} sx={{ margin: '0 auto' }}>
+      <Stack spacing={4} sx={{ margin: '0 auto', alignItems: 'center' }}>
         <TextField
           id="name"
           label="Name"
@@ -79,6 +80,7 @@ export const ContactForm = () => {
           value={name}
           onChange={handleInputChange}
           required
+          fullWidth
         
         />
 
@@ -96,12 +98,13 @@ export const ContactForm = () => {
           value={number}
           onChange={handleInputChange}
           required
+          fullWidth
   
         />
 
-        <Button type="submit" variant="outlined">
+        <StyledButton type="submit" >
           Add Contact
-        </Button>
+        </StyledButton>
       </Stack>
     </form>
   );

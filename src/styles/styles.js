@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, AppBar, List } from '@mui/material';
 import { styled, createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
@@ -9,11 +9,36 @@ export const theme = createTheme({
     secondary: {
       main: '#FFC371',
     },
+    action: {
+      // hover: '#FEECD4',
+      hoverOpacity: '0.0',
+    },
   },
 });
 
+export const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  background: '#fff',
+}));
+
+export const NavButton = styled(Button)(({ theme }) => ({
+  minWidth: 100,
+  color: theme.palette.primary.main,
+  textTransform: 'none',
+  transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+  '&:hover': {
+    transform: 'scale(1.1)',
+  },
+  border: '1px solid #FF5F6D',
+  borderRadius: 50,
+  '&.active': {
+    background: 'linear-gradient(to right, #FFC371, #FF5F6D)',
+    border: 'none',
+    color: '#fff',
+  },
+}));
+
 export const StyledButton = styled(Button)(({ theme }) => ({
-  minWidth: 200,
+  width: '50%',
   transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
   background:
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -33,19 +58,19 @@ export const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-export const NavButton = styled(Button)(({ theme }) => ({
-  minWidth: 100,
-  color: theme.palette.common.white,
+export const StyledList = styled(List)(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 5,
+}));
+
+export const DeleteButton = styled(Button)(() => ({
+  minWidth: 80,
+  padding: '4px 6px',
+  borderRadius: 50,
   textTransform: 'none',
-  transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+  border: '1px solid #FF5F6D',
   '&:hover': {
     transform: 'scale(1.1)',
-  },
-  border: '1px solid #FFC371',
-  borderRadius: 50,
-  '&.active': {
-    background: 'linear-gradient(to right, #FFC371, #FF5F6D)',
-
-    
   },
 }));
