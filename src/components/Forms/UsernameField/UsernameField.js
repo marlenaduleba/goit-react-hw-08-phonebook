@@ -1,7 +1,7 @@
 import { Input, InputLabel } from '@mui/material';
 import { StyledFormControl } from 'styles/styles.js';
 
-export const NameField = ({ value, onChange }) => (
+export const UsernameField = ({ value, onChange }) => (
   <StyledFormControl required autoComplete="off" fullWidth>
     <InputLabel htmlFor="standard-adornment-name">Username</InputLabel>
     <Input

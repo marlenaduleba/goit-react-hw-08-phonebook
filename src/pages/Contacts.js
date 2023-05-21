@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations.js';
@@ -26,28 +25,22 @@ export default function Contacts() {
       <Helmet>
         <title>Your contacts</title>
       </Helmet>
-     
-     
-     <Section title="Phonebook">
-       <ContactForm />
-        {isLoading && <Loader  />}
-     </Section>
-     <Section title="Contacts">
-   
-       {contacts.length > 0 ? (
-         <Filter />
-       ) : (
-         <Typography align='center'>
-           Looks like you don`t have any contacts yet or just clear them all.
-           Please add new contact.
-         </Typography>
-       )}
-       <ContactList />
-   
-     </Section>
-  
 
-     
+      <Section title="Phonebook">
+        <ContactForm />
+        {isLoading && <Loader />}
+      </Section>
+      <Section title="Contacts">
+        {contacts.length > 0 ? (
+          <Filter />
+        ) : (
+          <Typography align="center">
+            Looks like you don`t have any contacts yet or just clear them all.
+            Please add new contact.
+          </Typography>
+        )}
+        <ContactList />
+      </Section>
     </>
   );
 }

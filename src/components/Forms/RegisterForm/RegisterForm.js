@@ -7,7 +7,7 @@ import { register } from 'redux/auth/operations.js';
 
 import { EmailField } from 'components/Forms/EmailField/EmailField.js';
 import { PasswordField } from 'components/Forms/PasswordField/PasswordField.js';
-import { NameField } from '../NameField/NameField.js';
+import { UsernameField } from '../UsernameField/UsernameField.js';
 
 const initialValues = {
   name: '',
@@ -46,7 +46,7 @@ export const RegisterForm = () => {
       onSubmit={handleSubmit}
       autoComplete="off"
     >
-      <NameField value={values.name} onChange={handleNameChange} />
+      <UsernameField value={values.name} onChange={handleNameChange} />
       <EmailField value={values.email} onChange={handleEmailChange} />
       <PasswordField
         value={values.password}
