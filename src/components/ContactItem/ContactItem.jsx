@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations.js';
 //import PropTypes from 'prop-types';
-import { ListItem, Button, ListItemButton, ListItemText } from '@mui/material';
+import { ListItem, ListItemButton, ListItemText } from '@mui/material';
 import { DeleteButton } from 'styles/styles.js';
 
 import { Notify } from 'notiflix';

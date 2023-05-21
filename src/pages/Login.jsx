@@ -1,4 +1,4 @@
-import LoginForm from 'components/Forms/LoginForm/LoginForm.js';
+import LoginForm from 'components/Forms/LoginForm.jsx';
 import { Helmet } from 'react-helmet';
 import { Section } from 'components/Section/Section.jsx';
 

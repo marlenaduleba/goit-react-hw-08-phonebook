@@ -9,24 +9,18 @@ export const Filter = () => {
 
   const handleFilter = e => {
     dispatch(setFilter(e.target.value));
-  
   };
 
   return (
-    <Stack >
-     
-       
-        <TextField
-          label="Find contacts by name"
-          type="search"
-          variant='standard'
-          value={filter}
-          name="filter"
-          onChange={handleFilter}
-        />
-     
+    <Stack>
+      <TextField
+        label="Find contacts by name"
+        type="search"
+        variant="standard"
+        value={filter}
+        name="filter"
+        onChange={handleFilter}
+      />
     </Stack>
   );
 };
-
-

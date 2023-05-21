@@ -17,13 +17,13 @@ const contactsSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-    filter: ''
+    filter: '',
   },
   reducers: {
-         setFilter(state, action) {
-           state.filter = action.payload;
-         },
-     },
+    setFilter(state, action) {
+      state.filter = action.payload;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchContacts.pending, handlePending)

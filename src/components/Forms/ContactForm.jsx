@@ -6,8 +6,8 @@ import { selectAllContacts } from 'redux/contacts/selectors.js';
 import { Notify } from 'notiflix';
 import { Stack } from '@mui/material';
 import { StyledButton } from 'styles/styles.js';
-import { NameField } from './NameField.js';
-import { NumberField } from '../NumberField.js';
+import { NameField } from './NameField.jsx';
+import { NumberField } from './NumberField.jsx';
 
 const initialValues = {
   name: '',

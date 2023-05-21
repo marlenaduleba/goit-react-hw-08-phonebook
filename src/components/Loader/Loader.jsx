@@ -6,7 +6,7 @@ const Loader = props => {
       height="70"
       width="70"
       radius="9"
-      color="#6096ba"
+      color="#FF5F6D"
       ariaLabel="three-dots-loading"
       wrapperStyle={{display: 'flex', justifyContent: 'center'}}
       wrapperClassName=""

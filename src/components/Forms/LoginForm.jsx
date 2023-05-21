@@ -1,35 +1,35 @@
+import { logIn } from 'redux/auth/operations.js';
 import { useDispatch } from 'react-redux';
 import { StyledButton } from 'styles/styles.js';
 import { Stack } from '@mui/material';
 
-import { useHandleSubmit, useHandleInputChange, useHandleClickShowPassword } from 'hooks/useFormUtils.js';
-import { register } from 'redux/auth/operations.js';
+import { EmailField } from 'components/Forms/EmailField.jsx';
+import { PasswordField } from 'components/Forms/PasswordField.jsx';
 
-import { EmailField } from 'components/Forms/EmailField/EmailField.js';
-import { PasswordField } from 'components/Forms/PasswordField/PasswordField.js';
-import { UsernameField } from '../UsernameField/UsernameField.js';
+import {
+  useHandleSubmit,
+  useHandleInputChange,
+  useHandleClickShowPassword,
+  useHandleMouseDownPassword,
+} from 'hooks/useFormUtils.js';
 
 const initialValues = {
-  name: '',
   email: '',
   password: '',
   showPassword: false,
 };
 
-export const RegisterForm = () => {
+export default function LoginForm() {
   const dispatch = useDispatch();
 
   const [values, handleSubmit, setValues] = useHandleSubmit(
     initialValues,
-    values => dispatch(register(values))
+    values => dispatch(logIn(values))
   );
 
   const handleInputChange = useHandleInputChange(setValues);
   const handleClickShowPassword = useHandleClickShowPassword(setValues);
-
-  const handleNameChange = e => {
-    handleInputChange(e, setValues);
-  };
+  const handleMouseDownPassword = useHandleMouseDownPassword(setValues);
 
   const handleEmailChange = e => {
     handleInputChange(e, setValues);
@@ -46,16 +46,15 @@ export const RegisterForm = () => {
       onSubmit={handleSubmit}
       autoComplete="off"
     >
-      <UsernameField value={values.name} onChange={handleNameChange} />
       <EmailField value={values.email} onChange={handleEmailChange} />
       <PasswordField
         value={values.password}
         onChange={handlePasswordChange}
         showPassword={values.showPassword}
         onClickToggle={handleClickShowPassword}
-        onMouseDown={() => {}}
+        onMouseDown={handleMouseDownPassword}
       />
-      <StyledButton type="submit">Register</StyledButton>
+      <StyledButton type="submit">Log In</StyledButton>
     </Stack>
   );
-};
+}

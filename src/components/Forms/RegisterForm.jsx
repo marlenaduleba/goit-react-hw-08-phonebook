@@ -1,35 +1,39 @@
-import { logIn } from 'redux/auth/operations.js';
 import { useDispatch } from 'react-redux';
 import { StyledButton } from 'styles/styles.js';
 import { Stack } from '@mui/material';
-
-import { EmailField } from 'components/Forms/EmailField/EmailField.js';
-import { PasswordField } from 'components/Forms/PasswordField/PasswordField.js';
 
 import {
   useHandleSubmit,
   useHandleInputChange,
   useHandleClickShowPassword,
-  useHandleMouseDownPassword,
 } from 'hooks/useFormUtils.js';
+import { register } from 'redux/auth/operations.js';
+
+import { EmailField } from 'components/Forms/EmailField.jsx';
+import { PasswordField } from 'components/Forms/PasswordField.jsx';
+import { UsernameField } from './UsernameField.jsx';
 
 const initialValues = {
+  name: '',
   email: '',
   password: '',
   showPassword: false,
 };
 
-export default function LoginForm() {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const [values, handleSubmit, setValues] = useHandleSubmit(
     initialValues,
-    values => dispatch(logIn(values))
+    values => dispatch(register(values))
   );
 
   const handleInputChange = useHandleInputChange(setValues);
   const handleClickShowPassword = useHandleClickShowPassword(setValues);
-  const handleMouseDownPassword = useHandleMouseDownPassword(setValues);
+
+  const handleNameChange = e => {
+    handleInputChange(e, setValues);
+  };
 
   const handleEmailChange = e => {
     handleInputChange(e, setValues);
@@ -46,15 +50,16 @@ export default function LoginForm() {
       onSubmit={handleSubmit}
       autoComplete="off"
     >
+      <UsernameField value={values.name} onChange={handleNameChange} />
       <EmailField value={values.email} onChange={handleEmailChange} />
       <PasswordField
         value={values.password}
         onChange={handlePasswordChange}
         showPassword={values.showPassword}
         onClickToggle={handleClickShowPassword}
-        onMouseDown={handleMouseDownPassword}
+        onMouseDown={() => {}}
       />
-      <StyledButton type="submit">Log In</StyledButton>
+      <StyledButton type="submit">Register</StyledButton>
     </Stack>
   );
-}
+};
