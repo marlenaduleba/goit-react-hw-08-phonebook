@@ -20,6 +20,12 @@ export const theme = createTheme({
       // hover: '#FEECD4',
       hoverOpacity: '0.0',
     },
+    text: {
+      primary: '#2C2C2C',
+    },
+    common: {
+      lightBlack: '#2C2C2C',
+    },
   },
 });
 
@@ -86,8 +92,9 @@ export const DeleteButton = styled(Button)(() => ({
 }));
 
 export const StyledTypography = styled(Typography)(() => ({
-  marginBottom: '32px',
+  marginBottom: '24px',
   textAlign: 'center',
+  color: theme.palette.text.primary,
 }));
 
 export const StyledFormControl = styled(FormControl)(() => ({
