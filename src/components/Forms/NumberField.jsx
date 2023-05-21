@@ -18,7 +18,10 @@ export const NumberField = ({ value, onInputChange }) => {
         value={value}
         onChange={handleNumberChange}
         autoComplete="off"
-        inputProps={{ pattern: "[0-9]+", title: "Only numbers are allowed" }}
+        inputProps={{
+          pattern: "^[+]?[0-9 \\u0028\\u0029\\u002D]*$",
+          title: "Phone number must consist of digits and may include spaces, dashes, and parentheses. It can start with '+'",
+        }}
       />
     </StyledFormControl>
   );
