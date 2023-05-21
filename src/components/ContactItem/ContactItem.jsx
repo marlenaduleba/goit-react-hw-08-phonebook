@@ -4,7 +4,7 @@ import { deleteContact } from 'redux/contacts/operations.js';
 import { ListItem, ListItemButton, ListItemText } from '@mui/material';
 import { DeleteButton } from 'styles/styles.js';
 
-import { Notify } from 'notiflix';
+import { toast } from 'react-toastify';
 import { selectError } from 'redux/contacts/selectors.js';
 
 export const ContactItem = ({ contact }) => {
@@ -13,11 +13,11 @@ export const ContactItem = ({ contact }) => {
 
   const handleDelete = () => {
     dispatch(deleteContact(contact.id));
-    Notify.info(`${contact.name} removed from your contacts.`);
+    toast.info(`${contact.name} removed from your contacts.`);
   };
 
   if (error) {
-    Notify.error(`ERROR`);
+    toast.error(`ERROR`);
     return (
       <h2 className="text" style={{ fontSize: '40px' }}>
         ERROR

@@ -4,14 +4,14 @@ import { selectFilteredContacts } from 'redux/contacts/selectors.js';
 import { selectError } from 'redux/contacts/selectors.js';
 import { StyledList } from 'styles/styles.js';
 
-import { Notify } from 'notiflix';
+import { toast } from 'react-toastify';
 
 export const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
   const error = useSelector(selectError);
 
   if (error) {
-    Notify.info(`Error`);
+    toast.info(`Error`);
     return (
       <h2 className="text" style={{ fontSize: '40px' }}>
         ERROR

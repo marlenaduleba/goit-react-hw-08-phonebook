@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+
 const styles = {
     container: {
       minHeight: 'calc(100vh - 50px)',
@@ -14,8 +16,15 @@ const styles = {
   
   export default function Home() {
     return (
-      <div style={styles.container}>
+<>
+
+<Helmet>
+        <title>Phonebook App</title>
+      </Helmet>
+<div style={styles.container}>
         <h1 style={styles.title}>Contacts app welcome page 💁‍♀️</h1>
       </div>
-    );
+</>
+    )
+      
   }

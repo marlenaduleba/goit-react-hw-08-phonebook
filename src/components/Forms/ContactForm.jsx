@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations.js';
 import { selectError } from 'redux/contacts/selectors.js';
 import { selectAllContacts } from 'redux/contacts/selectors.js';
-import { Notify } from 'notiflix';
+import { toast } from 'react-toastify';
 import { Stack } from '@mui/material';
 import { StyledButton } from 'styles/styles.js';
 import { NameField } from './NameField.jsx';
@@ -25,7 +25,7 @@ export const ContactForm = () => {
 
     if (nameUnique(values.name)) {
       dispatch(addContact(values));
-      Notify.success(`${values.name} added to your contacts.`);
+      toast.success(`${values.name} added to your contacts.`);
       setValues(initialValues);
     }
   };
@@ -34,7 +34,7 @@ export const ContactForm = () => {
     const searchUnique = newName.toLowerCase();
 
     if (contacts.find(({ name }) => name.toLowerCase() === searchUnique)) {
-      Notify.failure(`${newName} is already in contacts.`);
+      toast.warn(`${newName} is already in contacts.`);
       return false;
     }
     return true;
@@ -45,7 +45,7 @@ export const ContactForm = () => {
   };
 
   if (error) {
-    Notify.error(`ERROR`);
+    toast.error(`ERROR`);
     return null;
   }
 
