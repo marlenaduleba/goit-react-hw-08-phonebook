@@ -4,7 +4,7 @@ import { Stack } from '@mui/material';
 
 export const AuthNav = () => {
   return (
-    <Stack direction='row' sx={{gap: 1, marginLeft: 'auto'}} >
+    <Stack direction='row' sx={{gap: 2, marginLeft: 'auto'}} >
       <NavButton  component={NavLink}  to="/login"  >
         Log In
       </NavButton >
