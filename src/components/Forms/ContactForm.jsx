@@ -34,7 +34,7 @@ export const ContactForm = () => {
     const searchUnique = newName.toLowerCase();
 
     if (contacts.find(({ name }) => name.toLowerCase() === searchUnique)) {
-      toast.warn(`${newName} is already in contacts.`);
+      toast.error(`${newName} is already in contacts.`);
       return false;
     }
     return true;

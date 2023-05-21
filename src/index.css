@@ -16,3 +16,9 @@ input:-webkit-autofill:active {
   transition: background-color 9999s ease-in-out 0s;
 }
 
+:root {
+  --toastify-color-error: #ff5f6d;
+  --toastify-color-success: #3498db;
+  --toastify-color-info: #FFC371;
+ 
+}

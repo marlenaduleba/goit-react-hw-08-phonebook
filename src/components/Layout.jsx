@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Loader from './Loader/Loader.jsx';
 
 export const Layout = () => {
+  
   return (
     <div>
       <AppBar />
@@ -14,19 +15,12 @@ export const Layout = () => {
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
-        <ToastContainer
-         position="top-right"
-         autoClose={3000}
-         hideProgressBar={false}
-         newestOnTop={false}
-         closeOnClick
-         pauseOnFocusLoss
-         draggable
-         pauseOnHover
-         theme="colored"
-         style={{
-           top: 'calc(60px + 10px)' // Dodaj 40px do wartości top
-         }}
+        <ToastContainer 
+        autoClose={1000}
+        theme="colored" 
+        style={{
+          top: 'calc(60px + 10px)' 
+        }}
         />
       </Container>
     </div>
