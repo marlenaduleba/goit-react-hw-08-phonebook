@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations.js';
 import { selectLoading } from 'redux/contacts/selectors.js';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Typography } from '@mui/material';
 import { Section } from 'components/Section/Section.jsx';
 import { ContactForm } from 'components/Forms/ContactForm.jsx';

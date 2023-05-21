@@ -6,6 +6,7 @@ import { persistor, store } from 'redux/store.js';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@mui/material/styles';
 import {theme} from './styles/styles.js';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 
@@ -19,7 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <PersistGate loading={null} persistor={persistor} >
         <BrowserRouter basename='/goit-react-hw-08-phonebook' >
           <ThemeProvider theme={theme} >
-            <App />
+            <HelmetProvider>
+              <App />
+            </HelmetProvider>
           </ThemeProvider>
         </BrowserRouter>
       </PersistGate>
