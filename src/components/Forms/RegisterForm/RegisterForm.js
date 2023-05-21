@@ -1,67 +1,68 @@
 import { useDispatch } from 'react-redux';
-import css from './RegisterForm.module.css';
-import { register } from 'redux/auth/operations.js';
-import { useReducer } from 'react';
 import { StyledButton } from 'styles/styles.js';
+import { Stack } from '@mui/material';
 
+import { useHandleSubmit, useHandleInputChange, useHandleClickShowPassword } from 'hooks/useFormUtils.js';
+import { register } from 'redux/auth/operations.js';
+
+import { EmailField } from 'components/Forms/EmailField/EmailField.js';
+import { PasswordField } from 'components/Forms/PasswordField/PasswordField.js';
 
 const initialValues = {
   name: '',
   email: '',
   password: '',
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'name':
-      return { ...state, name: action.payload };
-    case 'email':
-      return { ...state, email: action.payload };
-    case 'password':
-      return { ...state, password: action.payload };
-    case 'reset':
-      return { ...action.payload };
-    default:
-      return state;
-  }
+  showPassword: false,
 };
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const [{ name, email, password }, dispatchReducer] = useReducer(reducer, initialValues);
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch(
-      register({
-        name,
-        email,
-        password,
-      })
-    );
-      dispatchReducer({type: 'reset', payload: initialValues});
+  const [values, handleSubmit, setValues] = useHandleSubmit(
+    initialValues,
+    values => dispatch(register(values))
+  );
+
+  const handleInputChange = useHandleInputChange(setValues);
+  const handleClickShowPassword = useHandleClickShowPassword(setValues);
+
+  const handleNameChange = e => {
+    handleInputChange(e, setValues);
   };
 
-  const handleInputChange = (e) => {
-    const {name, value} = e.currentTarget;
-    dispatchReducer({type: name, payload: value})
-  }
+  const handleEmailChange = e => {
+    handleInputChange(e, setValues);
+  };
+
+  const handlePasswordChange = e => {
+    handleInputChange(e, setValues);
+  };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
+    <Stack
+      sx={{ alignItems: 'center' }}
+      component="form"
+      onSubmit={handleSubmit}
+      autoComplete="off"
+    >
+      <label>
         Username
-        <input type="text" name="name" value={name} onChange={handleInputChange}  />
+        <input
+          type="text"
+          name="name"
+          value={values.name}
+          onChange={handleNameChange}
+        />
       </label>
-      <label className={css.label}>
-        Email
-        <input type="email" name="email"  value={email} onChange={handleInputChange} />
-      </label>
-      <label className={css.label}>
-        Password
-        <input type="password" name="password"  value={password} onChange={handleInputChange} />
-      </label>
+      <EmailField value={values.email} onChange={handleEmailChange} />
+      <PasswordField
+        value={values.password}
+        onChange={handlePasswordChange}
+        showPassword={values.showPassword}
+        onClickToggle={handleClickShowPassword}
+        onMouseDown={() => {}}
+      />
       <StyledButton type="submit">Register</StyledButton>
-    </form>
+    </Stack>
   );
 };

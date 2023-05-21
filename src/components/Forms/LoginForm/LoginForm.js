@@ -6,7 +6,12 @@ import { Stack } from '@mui/material';
 import { EmailField } from 'components/Forms/EmailField/EmailField.js';
 import { PasswordField } from 'components/Forms/PasswordField/PasswordField.js';
 
-import { useHandleSubmit, useHandleInputChange, useHandleClickShowPassword, useHandleMouseDownPassword } from 'hooks/useFormUtils.js';
+import {
+  useHandleSubmit,
+  useHandleInputChange,
+  useHandleClickShowPassword,
+  useHandleMouseDownPassword,
+} from 'hooks/useFormUtils.js';
 
 const initialValues = {
   email: '',
@@ -16,26 +21,21 @@ const initialValues = {
 
 export default function LoginForm() {
   const dispatch = useDispatch();
-  
 
-  
   const [values, handleSubmit, setValues] = useHandleSubmit(
     initialValues,
-    (values) => dispatch(logIn(values)) 
+    values => dispatch(logIn(values))
   );
-
-
-
 
   const handleInputChange = useHandleInputChange(setValues);
   const handleClickShowPassword = useHandleClickShowPassword(setValues);
-  const handleMouseDownPassword = useHandleMouseDownPassword();
+  const handleMouseDownPassword = useHandleMouseDownPassword(setValues);
 
-  const handleEmailChange = (e) => {
+  const handleEmailChange = e => {
     handleInputChange(e, setValues);
   };
 
-  const handlePasswordChange = (e) => {
+  const handlePasswordChange = e => {
     handleInputChange(e, setValues);
   };
 
