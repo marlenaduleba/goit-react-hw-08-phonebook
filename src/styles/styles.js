@@ -1,4 +1,11 @@
-import { Button, AppBar, List, Typography, FormControl } from '@mui/material';
+import {
+  Button,
+  AppBar,
+  List,
+  Typography,
+  FormControl,
+  Container,
+} from '@mui/material';
 import { styled, createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
@@ -15,6 +22,8 @@ export const theme = createTheme({
     },
   },
 });
+
+export const StyledContainer = styled(Container)(() => ({}));
 
 export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   background: '#fff',
@@ -38,7 +47,7 @@ export const NavButton = styled(Button)(({ theme }) => ({
 }));
 
 export const StyledButton = styled(Button)(({ theme }) => ({
-  marginTop: '24px',
+  marginTop: '8px',
   width: '50%',
   transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
   background:
@@ -77,10 +86,10 @@ export const DeleteButton = styled(Button)(() => ({
 }));
 
 export const StyledTypography = styled(Typography)(() => ({
-  marginBottom: '8px',
+  marginBottom: '32px',
   textAlign: 'center',
 }));
 
 export const StyledFormControl = styled(FormControl)(() => ({
-  margin: '16px 0 8px',
+  marginBottom: '32px',
 }));

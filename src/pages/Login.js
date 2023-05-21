@@ -1,6 +1,6 @@
-import LoginForm  from 'components/LoginForm/LoginForm.js';
+import LoginForm from 'components/Forms/LoginForm/LoginForm.js';
 import { Helmet } from 'react-helmet';
-import { Container } from '@mui/system';
+import { Section } from 'components/Section/Section.jsx';
 
 export default function Login() {
   return (
@@ -8,9 +8,10 @@ export default function Login() {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <Container maxWidth='sm' sx={{paddingBottom: 10}} >
+
+      <Section title="Log In">
         <LoginForm />
-      </Container>
+      </Section>
     </div>
   );
 }

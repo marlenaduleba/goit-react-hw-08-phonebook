@@ -8,7 +8,7 @@ import { StyledAppBar } from 'styles/styles.js';
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <Box sx={{ flexGrow: 1, marginBottom: '20px' }}>
+    <Box sx={{ flexGrow: 1, marginBottom: 5 }}>
       <StyledAppBar position="static">
         <Toolbar>
           <Navigation />

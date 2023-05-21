@@ -6,7 +6,7 @@ import { selectLoading } from 'redux/contacts/selectors.js';
 import { Helmet } from 'react-helmet';
 import { Container, Typography } from '@mui/material';
 import { Section } from 'components/Section/Section.jsx';
-import { ContactForm } from 'components/ContactForm/ContactForm.jsx';
+import { ContactForm } from 'components/Forms/ContactForm/ContactForm.jsx';
 import Loader from 'components/Loader/Loader.jsx';
 import { Filter } from 'components/Filter/Filter.jsx';
 import { ContactList } from 'components/ContactList/ContactList.jsx';
@@ -26,7 +26,7 @@ export default function Contacts() {
       <Helmet>
         <title>Your contacts</title>
       </Helmet>
-      <Container maxWidth='sm' sx={{paddingBottom: 10}}  >
+     
      
      <Section title="Phonebook">
        <ContactForm />
@@ -46,12 +46,8 @@ export default function Contacts() {
    
      </Section>
   
- </Container>
-      {/* <TaskEditor />
-      <div>
-        {isLoading && 'Request in progress...'}
-      </div>
-      <TaskList/> */}
+
+     
     </>
   );
 }
