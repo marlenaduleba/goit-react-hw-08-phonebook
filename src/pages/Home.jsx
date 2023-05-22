@@ -1,30 +1,18 @@
-import { Helmet } from "react-helmet-async";
+import { Helmet } from 'react-helmet-async';
+import { Box } from '@mui/material';
+import { StyledTypography } from 'styles/styles.js';
 
-const styles = {
-    container: {
-      minHeight: 'calc(100vh - 50px)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    title: {
-      fontWeigth: 500,
-      fontSize: 48,
-      textAlign: 'center',
-    },
-  };
-  
-  export default function Home() {
-    return (
-<>
-
-<Helmet>
+export default function Home() {
+  return (
+    <>
+      <Helmet>
         <title>Phonebook App</title>
       </Helmet>
-<div style={styles.container}>
-        <h1 style={styles.title}>Contacts app welcome page 💁‍♀️</h1>
-      </div>
-</>
-    )
-      
-  }
+      <Box>
+        <StyledTypography variant="h1">welcome to</StyledTypography>
+        <StyledTypography variant="h1">Phonebook</StyledTypography>
+       
+      </Box>
+    </>
+  );
+}
