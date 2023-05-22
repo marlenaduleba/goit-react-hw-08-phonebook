@@ -16,7 +16,7 @@ export const Layout = () => {
           <Outlet />
         </Suspense>
         <ToastContainer 
-        autoClose={1000}
+        autoClose={2000}
         theme="colored" 
         style={{
           top: 'calc(60px + 10px)' 

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto';
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 input::-ms-reveal {
@@ -17,8 +17,11 @@ input:-webkit-autofill:active {
 }
 
 :root {
-  --toastify-color-error: #ff5f6d;
-  --toastify-color-success: #3498db;
-  --toastify-color-info: #FFC371;
- 
+  
+  --toastify-color-error: linear-gradient(to right, #ff5f6d, #d50000);
+
+  --toastify-color-success: linear-gradient(to right, #00FFFF, #0096FF);
+  --toastify-color-info: linear-gradient(to right, #ffc371, #FFAC1C);
+
+
 }
