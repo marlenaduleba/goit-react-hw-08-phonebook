@@ -9,7 +9,7 @@ export const NumberField = ({ value, onInputChange }) => {
   };
 
   return (
-    <StyledFormControl required autoComplete="off" fullWidth>
+    <StyledFormControl required fullWidth>
       <InputLabel htmlFor="standard-adornment-number">Number</InputLabel>
       <Input
         id="standard-adornment-number"
@@ -17,7 +17,7 @@ export const NumberField = ({ value, onInputChange }) => {
         name="number"
         value={value}
         onChange={handleNumberChange}
-        autoComplete="off"
+  
         inputProps={{
           pattern: "^[+]?[0-9 \\u0028\\u0029\\u002D]*$",
           title: "Phone number must consist of digits and may include spaces, dashes, and parentheses. It can start with '+'",

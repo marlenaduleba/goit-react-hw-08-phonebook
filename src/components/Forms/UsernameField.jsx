@@ -2,15 +2,16 @@ import { Input, InputLabel } from '@mui/material';
 import { StyledFormControl } from 'styles/styles.js';
 
 export const UsernameField = ({ value, onChange }) => (
-  <StyledFormControl required autoComplete="off" fullWidth>
-    <InputLabel htmlFor="standard-adornment-name">Username</InputLabel>
+  <StyledFormControl required fullWidth>
+    <InputLabel shrink htmlFor="standard-adornment-username">Username</InputLabel>
     <Input
-      id="standard-adornment-name"
+      id="standard-adornment-username"
       type="text"
-      name="name"
+      name="usernameInput"
       value={value}
       onChange={onChange}
-      autoComplete="off"
+      
+     
     />
   </StyledFormControl>
 );

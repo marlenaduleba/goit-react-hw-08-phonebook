@@ -8,7 +8,7 @@ export const NameField = ({ value, onInputChange }) => {
   };
 
   return (
-    <StyledFormControl required autoComplete="off" fullWidth>
+    <StyledFormControl required fullWidth>
       <InputLabel htmlFor="standard-adornment-name">Name</InputLabel>
       <Input
         id="standard-adornment-name"
@@ -16,7 +16,7 @@ export const NameField = ({ value, onInputChange }) => {
         name="name"
         value={value}
         onChange={handleNameChange}
-        autoComplete="off"
+  
         inputProps={{
           pattern: "[A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż\\-' ]+",
           title:

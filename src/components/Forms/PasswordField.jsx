@@ -13,15 +13,14 @@ export const PasswordField = ({ value, onChange, onClickToggle }) => {
   };
 
   return (
-    <StyledFormControl required autoComplete="off" fullWidth>
-      <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+    <StyledFormControl required  fullWidth>
+      <InputLabel shrink htmlFor="standard-adornment-password">Password</InputLabel>
       <Input
         id="standard-adornment-password"
         type={showPassword ? 'text' : 'password'}
         name="password"
         value={value}
         onChange={onChange}
-        autoComplete="off"
         endAdornment={
           <InputAdornment position="end">
             <IconButton
