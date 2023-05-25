@@ -1,10 +1,13 @@
+:root {
+  --toastify-color-success: linear-gradient(to right, #80d8ff, #3498db);
+  --toastify-color-info: linear-gradient(to right, #ffdb57, #FFC371);
+  --toastify-color-error: linear-gradient(to right, #ff5f6d, #d50000);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -text-size-adjust: 100%;
 }
 
 input::-ms-reveal {
@@ -16,11 +19,4 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 9999s ease-in-out 0s;
-}
-
-:root {
-  --toastify-color-error: linear-gradient(to right, #ff5f6d, #d50000);
-
-  --toastify-color-success: linear-gradient(to right, #00ffff, #0096ff);
-  --toastify-color-info: linear-gradient(to right, #ffc371, #ffac1c);
 }

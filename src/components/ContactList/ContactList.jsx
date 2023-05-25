@@ -25,7 +25,7 @@ export const ContactList = () => {
 
   return (
     <div>
-      <StyledList sx={{ width: '100%', marginTop: 2 }}>
+      <StyledList sx={{  }}>
         {filteredContacts.map(contact => (
           <ContactItem key={contact.id} contact={contact} />
         ))}

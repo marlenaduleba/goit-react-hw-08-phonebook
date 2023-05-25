@@ -1,4 +1,4 @@
-import { AppBar, List, Typography, FormControl } from '@mui/material';
+import { AppBar, List, FormControl, ListItemText } from '@mui/material';
 import { styled, createTheme } from '@mui/material/styles';
 
 const defaultTheme = createTheme();
@@ -16,12 +16,66 @@ export const theme = createTheme({
     fontFamily: `'Red Hat Display', sans-serif`,
   },
   components: {
+    MuiContainer: {
+      variants: [
+        {
+          props: { variant: 'wrapper' },
+          style: {
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: '100vh',
+            justifyContent: 'space-between',
+            '&.MuiContainer-root': {
+              paddingLeft: 0,
+              paddingRight: 0,
+            },
+          },
+        },
+      ],
+    },
+    MuiStack: {
+      variants: [
+        {
+          props: { place: 'right' },
+          style: { marginLeft: 'auto' },
+        },
+        {
+          props: { place: 'center' },
+          style: {
+            marginTop: '32px',
+            justifyContent: 'center',
+          },
+        },
+      ],
+    },
     MuiTypography: {
       styleOverrides: {
         root: {
           color: '#2B3B42',
+          textAlign: 'center',
         },
       },
+      variants: [
+        {
+          props: { version: 'title' },
+          style: {
+            marginBottom: '32px',
+            fontWeight: 500,
+          },
+        },
+        {
+          props: { version: 'home' },
+          style: {
+            marginBottom: '32px',
+          },
+        },
+        {
+          props: { version: 'footer' },
+          style: {
+            padding: '24px 0 24px',
+          },
+        },
+      ],
     },
     MuiButton: {
       styleOverrides: {
@@ -80,6 +134,21 @@ export const theme = createTheme({
         },
       ],
     },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontSize: 'inherit',
+          color: defaultTheme.palette.common.white,
+          height: 'auto',
+          alignItems: 'top',
+          borderRadius: 50,
+          verticalAlign: 'baseline',
+        },
+        label: {
+          padding: '8px 16px',
+        },
+      },
+    },
   },
 });
 
@@ -90,18 +159,21 @@ export const StyledAppBar = styled(AppBar)(() => ({
   '&:hover': {
     boxShadow: '0 0px 30px 0px rgba(0, 0, 0, 0.1)',
   },
+  marginBottom: '40px',
 }));
 
 export const StyledList = styled(List)(() => ({
   display: 'flex',
   flexDirection: 'column',
   gap: 5,
+  width: '100%',
+  marginTop: 2,
 }));
 
-export const StyledTypography = styled(Typography)(() => ({
-  marginBottom: '32px',
-  textAlign: 'center',
-  fontWeight: 500,
+export const StyledListItemText = styled(ListItemText)(() => ({
+  '& .MuiTypography-root': {
+    textAlign: 'start',
+  },
 }));
 
 export const StyledFormControl = styled(FormControl)(() => ({
