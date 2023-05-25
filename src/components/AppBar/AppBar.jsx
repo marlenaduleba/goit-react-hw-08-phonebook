@@ -9,7 +9,7 @@ export const AppBar = () => {
   const { isLoggedIn } = useAuth();
   return (
     <StyledAppBar position="static">
-      <Toolbar>
+      <Toolbar sx={{pt: 1, pb: 1}} >
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav place="right" />}
       </Toolbar>

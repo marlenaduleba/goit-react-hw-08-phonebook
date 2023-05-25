@@ -10,7 +10,10 @@ import { Footer } from './Footer/Footer.jsx';
 
 export const Layout = () => {
   return (
-    <Container variant='wrapper' >
+    <div style={{display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    justifyContent: 'space-between'}} >
       <AppBar />
       <Container component="main">
         <Suspense fallback={<Loader />}>
@@ -25,6 +28,6 @@ export const Layout = () => {
           }}
         />
       <Footer />
-    </Container>
+    </div>
   );
 };

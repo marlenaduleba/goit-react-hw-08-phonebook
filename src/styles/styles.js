@@ -1,4 +1,4 @@
-import { AppBar, List, FormControl, ListItemText } from '@mui/material';
+import { AppBar, List, FormControl, ListItemText, Link } from '@mui/material';
 import { styled, createTheme } from '@mui/material/styles';
 
 const defaultTheme = createTheme();
@@ -16,23 +16,6 @@ export const theme = createTheme({
     fontFamily: `'Red Hat Display', sans-serif`,
   },
   components: {
-    MuiContainer: {
-      variants: [
-        {
-          props: { variant: 'wrapper' },
-          style: {
-            display: 'flex',
-            flexDirection: 'column',
-            minHeight: '100vh',
-            justifyContent: 'space-between',
-            '&.MuiContainer-root': {
-              paddingLeft: 0,
-              paddingRight: 0,
-            },
-          },
-        },
-      ],
-    },
     MuiStack: {
       variants: [
         {
@@ -178,4 +161,12 @@ export const StyledListItemText = styled(ListItemText)(() => ({
 
 export const StyledFormControl = styled(FormControl)(() => ({
   marginBottom: '32px',
+}));
+
+export const StyledLink = styled(Link)(() => ({
+  color: '#00000099',
+  transition: '200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+  '&:hover': {
+    transform: 'scale(1.1)',
+  },
 }));

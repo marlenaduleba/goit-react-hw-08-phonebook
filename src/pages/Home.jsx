@@ -14,7 +14,7 @@ export default function Home() {
         </Typography>
         <Typography >
           Phonebook is an application designed to keep your contacts in one
-          place. After adding your account and logging in, you can add and
+          place.<br/> After adding your account and logging in, you can add and
           remove contacts, view and filter them and enjoy the design prepared
           especially for you.
         </Typography>
