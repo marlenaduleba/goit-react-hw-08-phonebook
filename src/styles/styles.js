@@ -1,76 +1,94 @@
-import {
-  Button,
-  AppBar,
-  List,
-  Typography,
-  FormControl,
-  Container,
-} from '@mui/material';
+import { AppBar, List, Typography, FormControl } from '@mui/material';
 import { styled, createTheme } from '@mui/material/styles';
+
+const defaultTheme = createTheme();
 
 export const theme = createTheme({
   palette: {
     primary: {
       main: '#FF5F6D',
     },
-    secondary: {
-      main: '#FFC371',
-    },
     action: {
-      // hover: '#FEECD4',
       hoverOpacity: '0.0',
     },
-    text: {
-      primary: '#2C2C2C',
+  },
+  typography: {
+    fontFamily: `'Red Hat Display', sans-serif`,
+  },
+  components: {
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: '#2B3B42',
+        },
+      },
     },
-    common: {
-      lightBlack: '#2C2C2C',
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          transition: '200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+          fontWeight: 500,
+          '&:hover': {
+            transform: 'scale(1.1)',
+          },
+          borderRadius: 50,
+          color: defaultTheme.palette.common.white,
+          textTransform: 'none',
+          fontSize: 15,
+          minHeight: 35,
+          boxShadow:
+            '0 20px 20px -20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.06)',
+          '&:active': {
+            boxShadow: defaultTheme.shadows[4],
+          },
+        },
+      },
+      variants: [
+        {
+          props: { variant: 'main' },
+          style: {
+            marginTop: '8px',
+            width: '50%',
+            minHeight: 'auto',
+            height: '40.25px',
+            background:
+              /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+              'linear-gradient(to right, #FFC371, #FF5F6D)',
+          },
+        },
+        {
+          props: { variant: 'nav' },
+          style: {
+            minWidth: 100,
+            color: '#FF5F6D',
+            border: '1px solid #FF5F6D',
+            '&.active': {
+              background: 'linear-gradient(to right, #FFC371, #FF5F6D)',
+              border: 'none',
+              color: defaultTheme.palette.common.white,
+            },
+          },
+        },
+        {
+          props: { variant: 'delete' },
+          style: {
+            minWidth: 80,
+            padding: '4px 6px',
+            border: '1px solid #FF5F6D',
+            color: '#FF5F6D',
+          },
+        },
+      ],
     },
   },
 });
 
-export const StyledContainer = styled(Container)(() => ({}));
-
-export const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  background: '#fff',
-}));
-
-export const NavButton = styled(Button)(({ theme }) => ({
-  minWidth: 100,
-  color: theme.palette.primary.main,
-  textTransform: 'none',
-  transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+export const StyledAppBar = styled(AppBar)(() => ({
+  background: defaultTheme.palette.common.white,
+  boxShadow: '0 0px 20px 0px rgba(0, 0, 0, 0.05)',
+  transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
   '&:hover': {
-    transform: 'scale(1.1)',
-  },
-  border: '1px solid #FF5F6D',
-  borderRadius: 50,
-  '&.active': {
-    background: 'linear-gradient(to right, #FFC371, #FF5F6D)',
-    border: 'none',
-    color: '#fff',
-  },
-}));
-
-export const StyledButton = styled(Button)(({ theme }) => ({
-  marginTop: '8px',
-  width: '50%',
-  transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
-  background:
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    'linear-gradient(to right, #FFC371, #FF5F6D)',
-  '&:hover': {
-    transform: 'scale(1.1)',
-  },
-  borderRadius: 50,
-  color: theme.palette.common.white,
-  textTransform: 'none',
-  fontSize: 15,
-  fontWeight: 700,
-  minHeight: 30,
-  boxShadow: theme.shadows[0],
-  '&:active': {
-    boxShadow: theme.shadows[0],
+    boxShadow: '0 0px 30px 0px rgba(0, 0, 0, 0.1)',
   },
 }));
 
@@ -80,21 +98,10 @@ export const StyledList = styled(List)(() => ({
   gap: 5,
 }));
 
-export const DeleteButton = styled(Button)(() => ({
-  minWidth: 80,
-  padding: '4px 6px',
-  borderRadius: 50,
-  textTransform: 'none',
-  border: '1px solid #FF5F6D',
-  '&:hover': {
-    transform: 'scale(1.1)',
-  },
-}));
-
 export const StyledTypography = styled(Typography)(() => ({
-  marginBottom: '24px',
+  marginBottom: '32px',
   textAlign: 'center',
-  color: theme.palette.text.primary,
+  fontWeight: 500,
 }));
 
 export const StyledFormControl = styled(FormControl)(() => ({

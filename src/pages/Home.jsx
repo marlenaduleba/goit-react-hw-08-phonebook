@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import { Box } from '@mui/material';
-import { StyledTypography } from 'styles/styles.js';
+import { Box, Typography } from '@mui/material';
+
 
 export default function Home() {
   return (
@@ -9,8 +9,8 @@ export default function Home() {
         <title>Phonebook App</title>
       </Helmet>
       <Box>
-        <StyledTypography variant="h1">welcome to</StyledTypography>
-        <StyledTypography variant="h1">Phonebook</StyledTypography>
+        <Typography variant="h1">welcome to</Typography>
+        <Typography variant="h1">Phonebook</Typography>
        
       </Box>
     </>

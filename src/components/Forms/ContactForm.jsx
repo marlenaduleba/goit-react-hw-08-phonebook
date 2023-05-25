@@ -4,8 +4,8 @@ import { addContact } from 'redux/contacts/operations.js';
 import { selectError } from 'redux/contacts/selectors.js';
 import { selectAllContacts } from 'redux/contacts/selectors.js';
 import { toast } from 'react-toastify';
-import { Input, InputLabel, Stack } from '@mui/material';
-import { StyledButton, StyledFormControl } from 'styles/styles.js';
+import { Button, Input, InputLabel, Stack } from '@mui/material';
+import { StyledFormControl } from 'styles/styles.js';
 
 const initialValues = {
   name: '',
@@ -84,7 +84,7 @@ export const ContactForm = () => {
           }}
         />
       </StyledFormControl>
-      <StyledButton type="submit">Add Contact</StyledButton>
+      <Button type="submit" variant='main'>Add Contact</Button>
     </Stack>
   );
 };

@@ -1,15 +1,15 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "hooks/useAuth.js";
-import { NavButton  } from "styles/styles.js";
+import { Button } from "@mui/material";
 
 export const Navigation = () => {
 const {isLoggedIn} = useAuth();
 
     return <nav>
-      <NavButton  to="/" component={NavLink}  >Home</NavButton >
+      <Button variant="nav"  to="/" component={NavLink}  >Home</Button >
       {isLoggedIn && (   
 
-      <NavButton sx={{ marginLeft: 2}}  to="/contacts" component={NavLink} >Contacts</NavButton >
+      <Button variant="nav" sx={{ marginLeft: 2}}  to="/contacts" component={NavLink} >Contacts</Button >
       )}   
     </nav>
   };

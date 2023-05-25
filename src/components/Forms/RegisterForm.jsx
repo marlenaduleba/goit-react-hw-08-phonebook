@@ -1,8 +1,9 @@
 import { register } from 'redux/auth/operations.js';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { StyledButton, StyledFormControl } from 'styles/styles.js';
+import { StyledFormControl } from 'styles/styles.js';
 import {
+  Button,
   IconButton,
   Input,
   InputAdornment,
@@ -92,7 +93,7 @@ export const RegisterForm = () => {
           }
         />
       </StyledFormControl>
-      <StyledButton type="submit">Register</StyledButton>
+      <Button type="submit" variant='main' >Register</Button>
     </Stack>
   );
 };
