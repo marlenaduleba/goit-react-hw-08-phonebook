@@ -1,4 +1,4 @@
-import { Container, Divider, Typography, Link, Stack } from "@mui/material";
+import { Container, Divider, Typography, Stack } from "@mui/material";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { StyledLink } from "styles/styles.js";
