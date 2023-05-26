@@ -2,7 +2,9 @@
   --toastify-color-success: linear-gradient(to right, #80d8ff, #3498db);
   --toastify-color-info: linear-gradient(to right, #ffdb57, #ffc371);
   --toastify-color-error: linear-gradient(to right, #ff5f6d, #d50000);
+ 
 }
+
 
 * {
   margin: 0;

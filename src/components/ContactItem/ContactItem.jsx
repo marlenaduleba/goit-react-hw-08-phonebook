@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations.js';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Button, ListItem, ListItemButton} from '@mui/material';
 import { StyledListItemText } from 'styles/styles.js';
 
@@ -50,9 +50,10 @@ export const ContactItem = ({ contact }) => {
   );
 };
 
-// ContactItem.propTypes = {
-//   contact: PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     phone: PropTypes.string.isRequired,
-//   }).isRequired,
-// };
+ContactItem.propTypes = {
+  contact: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  }).isRequired,
+};
