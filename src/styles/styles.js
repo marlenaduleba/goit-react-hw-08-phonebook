@@ -142,7 +142,7 @@ export const StyledAppBar = styled(AppBar)(() => ({
   '&:hover': {
     boxShadow: '0 0px 30px 0px rgba(0, 0, 0, 0.1)',
   },
-  marginBottom: '40px',
+  marginBottom: '24px',
 }));
 
 export const StyledList = styled(List)(() => ({
