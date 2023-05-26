@@ -8,7 +8,7 @@ export const Footer = () => {
 
     return (
         <Container  component='footer'>
-            <Divider  />
+            <Divider sx={{mt: 3}} />
             <Stack direction='row' sx={{ justifyContent: 'center', alignItems: 'center', gap: 2}}>
                 <Typography variant="body2" version='footer'  >Powered and designed by <strong>Marlena Dulęba</strong> 2023</Typography>
                 <Stack direction='row' sx={{gap: '4px'}}>
