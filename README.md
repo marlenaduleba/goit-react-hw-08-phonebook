@@ -1,4 +1,5 @@
 # Contact Book with Material UI
+![screenshot]()
 
 This project is a "Contact Book" application built with React and styled using Material UI. The application allows users to register, log in, and update their profiles, as well as manage their private collection of contacts.
 
