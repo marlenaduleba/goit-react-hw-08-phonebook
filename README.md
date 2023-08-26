@@ -1,5 +1,5 @@
 # Contact Book with Material UI
-![screenshot]()
+![screenshot](https://github.com/marlenaduleba/goit-react-hw-08-phonebook/blob/main/phonebook.png)
 
 This project is a "Contact Book" application built with React and styled using Material UI. The application allows users to register, log in, and update their profiles, as well as manage their private collection of contacts.
 
@@ -19,5 +19,4 @@ The project also includes routing using React Router, a navigation component, an
 - React Router
 - Material UI
 
-This application serves as a great showcase of front-end skills, interactive form handling, and routing in React. It's also an opportunity to demonstrate proficiency in designing aesthetically pleasing user interfaces.
-
+This application serves as a great showcase of front-end skills, interactive form handling, and routing in React. It's also a presentation of my skills in designing aesthetically pleasing user interfaces.
